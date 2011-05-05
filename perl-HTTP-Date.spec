@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Release:    2
 
 Summary:    Date conversion for HTTP date formats
 License:    GPL+ or Artistic
@@ -12,6 +12,7 @@ Url:        http://search.cpan.org/dist/%{upstream_name}
 Source0:    http://www.cpan.org/modules/by-module/HTTP/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires: perl(Time::Local)
+Conflicts:	perl-libwww-perl < 6
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
@@ -49,5 +50,3 @@ rm -rf %buildroot
 %doc Changes META.yml README
 %{_mandir}/man3/*
 %perl_vendorlib/*
-
-
