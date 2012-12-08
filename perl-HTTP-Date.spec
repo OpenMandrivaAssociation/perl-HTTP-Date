@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    5
+Release:    6
 
 Summary:    Date conversion for HTTP date formats
 License:    GPL+ or Artistic
@@ -12,9 +12,9 @@ Url:        http://search.cpan.org/dist/%{upstream_name}
 Source0:    http://www.cpan.org/modules/by-module/HTTP/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires: perl(Time::Local)
+BuildRequires: perl-devel
 Conflicts:	perl-libwww-perl < 6
 BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module provides functions that deal the date formats used by the HTTP
@@ -31,7 +31,7 @@ str2time(), are exported by default.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+%__perl Makefile.PL INSTALLDIRS=vendor
 
 %make
 
@@ -39,14 +39,32 @@ str2time(), are exported by default.
 %make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc Changes META.yml README
 %{_mandir}/man3/*
 %perl_vendorlib/*
+
+
+%changelog
+* Sun Jan 22 2012 Oden Eriksson <oeriksson@mandriva.com> 6.0.0-5
++ Revision: 765356
+- rebuilt for perl-5.14.2
+
+* Sat Jan 21 2012 Oden Eriksson <oeriksson@mandriva.com> 6.0.0-4
++ Revision: 763864
+- rebuilt for perl-5.14.x
+
+* Fri Jan 20 2012 Oden Eriksson <oeriksson@mandriva.com> 6.0.0-3
++ Revision: 763071
+- rebuild
+
+* Thu May 05 2011 Per Øyvind Karlsen <peroyvind@mandriva.org> 6.0.0-2
++ Revision: 669498
+- add conflicts on older perl-libwww-perl version to fix upgrades
+
+* Tue May 03 2011 Guillaume Rousse <guillomovitch@mandriva.org> 6.0.0-1
++ Revision: 664976
+- import perl-HTTP-Date
+
