@@ -1,14 +1,14 @@
 %define modname	HTTP-Date
-%define modver	6.00
+%define modver 6.02
 
 Summary:	Date conversion for HTTP date formats
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	11
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
-Source0:	http://www.cpan.org/modules/by-module/HTTP/%{modname}-%{modver}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/HTTP/HTTP-Date-%{modver}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl(Time::Local)
 BuildRequires:	perl-devel
@@ -43,4 +43,5 @@ str2time(), are exported by default.
 %doc Changes META.yml README
 %{perl_vendorlib}/*
 %{_mandir}/man3/*
+
 
