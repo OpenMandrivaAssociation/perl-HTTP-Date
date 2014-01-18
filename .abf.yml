@@ -1,2 +1,4 @@
+removed_sources:
+  HTTP-Date-6.00.tar.gz: 2b3c445e098ecf0fb30d1d2907fc584b852bc113
 sources:
-  "HTTP-Date-6.00.tar.gz": 2b3c445e098ecf0fb30d1d2907fc584b852bc113
+  HTTP-Date-6.02.tar.gz: 85f8dbcad22f2680775a185ce91a42c89e0ad2a8
