@@ -1,8 +1,8 @@
 %define modname	HTTP-Date
 Summary:	Date conversion for HTTP date formats
 Name:		perl-%{modname}
-Version:	6.02
-Release:	12
+Version:	6.08
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/%{modname}
@@ -26,7 +26,7 @@ str2time(), are exported by default.
   undefined argument, it will use the current time.
 
 %prep
-%setup -qn %{modname}-%{version}
+%setup -qn %{modname}-%{version} -n HTTP-Date-6.08
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor
