@@ -12,6 +12,7 @@ BuildRequires:	make
 BuildRequires:	perl(Test)
 BuildRequires:	perl(Time::Local)
 BuildRequires:	perl-devel
+BuildRequires:	perl(Test::More)
 Conflicts:	perl-libwww-perl < 6
 
 %description
